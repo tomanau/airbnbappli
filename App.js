@@ -14,12 +14,20 @@ import {
   Scene,
 } from 'react-native-router-flux';
 
+const styles = StyleSheet.create({
+  navBar: {
+    backgroundColor: '#FF5A5F', // changing navbar color
+  },
+  navTitle: {
+   color: 'white', // changing navbar title color
+  },
+})
 
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <Scene key={'home'} title={'Accueil'} component={HomeScene} />
+      <Router navigationBarStyle={styles.navBar} titleStyle={styles.navTitle}>
+        <Scene key={'home'} title={'Mon Airbnb'} component={HomeScene} />
         <Scene key={'room'} title={'Chambre'} component={RoomScene} />
         <Scene key={'profile'} title={'Utilisateur'} component={ProfileScene} />
       </Router>

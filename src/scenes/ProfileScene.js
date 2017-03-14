@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 70,
     flex : 1,
-    backgroundColor: "#FF5A5F",
   },
   h1: {
     fontSize: 20,
