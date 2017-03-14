@@ -17,7 +17,13 @@ console.log("_id", this.props._id)
 
       <View>
         <Room
-          _id= {this.props.}/>
+          title= {this.props.title}
+          description= {this.props.description}
+          price= {this.props.price}
+          ratingValue= {this.props.ratingValue}
+          user= {this.props.user}
+          _id= {this.props.id}
+          reviews= {this.props.reviews}/>
       </View>
 
 
