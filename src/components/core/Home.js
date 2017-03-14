@@ -5,24 +5,24 @@ import {
   Text,
   Button,
   ListView,
+  TouchableOpacity,
   Image,
   View
 } from 'react-native';
 import {
   Actions,
 } from 'react-native-router-flux';
-
+import RoomScene from '../../scenes/RoomScene';
 
 const styles = StyleSheet.create({
   container: {
     marginTop: 85,
     paddingLeft: 20,
     paddingRight: 20,
+    justifyContent: 'center',
     flex : 1,
   },
 });
-
-
 
 class Home extends React.Component {
 
@@ -48,18 +48,32 @@ class Home extends React.Component {
       });
   }
 
+
+
   renderRooms(rowData) {
+    console.log('rowData', rowData);
     return (
       <View style={{
         position: 'relative',
       }}>
-        <Image
-          source={{ uri: rowData.photos[0] }}
-          style={{
-            width: 345,
-            height: 150,
-           }} />
-         <Image
+        <TouchableOpacity onPress={() => Actions.room({
+          title: rowData.title,
+          description: rowData.description,
+          price: rowData.price,
+          ratingValue: rowData.ratingValue,
+          user: rowData.user,
+          _id: rowData._id,
+          photos: rowData.photos,
+          reviews: rowData.reviews,
+        })}>
+          <Image
+            source={{ uri: rowData.photos[0] }}
+            style={{
+              width: 345,
+              height: 150,
+             }} />
+          </TouchableOpacity>
+           <Image
            source={{ uri: rowData.user.account.photos[0] }}
            style={{
              borderRadius: 25,
@@ -85,7 +99,7 @@ class Home extends React.Component {
         {rowData.price} €</Text>
         <Text style={{
           paddingBottom: 14,
-        }}>{rowData.ratingValue} étoiles - {rowData.reviews} commentaires</Text>
+        }}>{rowData.ratingValue} ★ - {rowData.reviews} commentaires</Text>
         <View style={{
           height: 1,
           backgroundColor: '#DCDBE1',
@@ -122,8 +136,8 @@ class Home extends React.Component {
             onPress={() => Actions.profile({ name: 'Antoine' })} />
           <Button
             color="black"
-            title={'Room'}
-            onPress={() => Actions.room()} />
+            title={'Home'}
+            onPress={() => Actions.home()} />
         </View>
       </View>
 

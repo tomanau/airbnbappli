@@ -10,10 +10,17 @@ import Room from '../components/room/Room'
 
 class RoomScene extends React.Component {
 
-  render() {
 
+  render() {
+console.log("_id", this.props._id)
     return (
-        <Room/>
+
+      <View>
+        <Room
+          _id= {this.props.}/>
+      </View>
+
+
     );
   }
 }
