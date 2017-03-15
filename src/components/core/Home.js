@@ -63,6 +63,7 @@ class Home extends React.Component {
           price: rowData.price,
           ratingValue: rowData.ratingValue,
           user: rowData.user,
+          city: rowData.city,
           _id: rowData._id,
           photos: rowData.photos,
           reviews: rowData.reviews,

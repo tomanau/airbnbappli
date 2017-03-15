@@ -7,11 +7,11 @@ import {
 import {
   Actions,
 } from 'react-native-router-flux';
-import Room from '../components/room/Room'
+import Room from '../components/room/Room';
+import Mapp from '../components/map/Mapp'
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 85,
     paddingLeft: 20,
     paddingRight: 20,
     justifyContent: 'center',
@@ -63,16 +63,21 @@ class RoomScene extends React.Component {
       // }
 
       return (
+          <View style={styles.container}>
+            <Room
+              title= {this.props.title}
+              description= {this.props.description}
+              price= {this.props.price}
+              ratingValue= {this.props.ratingValue}
+              user= {this.props.user}
+              _id= {this.props._id}
+              reviews= {this.props.reviews}
+              photos= {this.props.photos}
+              city= {this.props.city}/>
+            <Mapp
+              city= {this.props.city}/>
+          </View>
 
-          <Room
-            title= {this.props.title}
-            description= {this.props.description}
-            price= {this.props.price}
-            ratingValue= {this.props.ratingValue}
-            user= {this.props.user}
-            _id= {this.props._id}
-            reviews= {this.props.reviews}/>
-      
       );
     }
 
