@@ -41,7 +41,8 @@ class Home extends React.Component {
     fetch('http://localhost:3001/api/room?city=paris')
       .then((res) => res.json())
       .then(rooms => {
-        console.log("json rooms", rooms.rooms);
+        console.log("rooms.rooms");
+        console.log(rooms.rooms);
         this.setState({
           dataSource: this.state.dataSource.cloneWithRows(rooms.rooms),
         });
@@ -52,22 +53,24 @@ class Home extends React.Component {
 
 
   renderRooms(rowData) {
-    console.log('rowData', rowData);
+    console.log('ENVOIE : ', rowData);
+
     return (
       <View style={{
         position: 'relative',
       }}>
-        <TouchableOpacity onPress={() => Actions.room({
-          title: rowData.title,
-          description: rowData.description,
-          price: rowData.price,
-          ratingValue: rowData.ratingValue,
-          user: rowData.user,
-          city: rowData.city,
-          _id: rowData._id,
-          photos: rowData.photos,
-          reviews: rowData.reviews,
-        })}>
+        <TouchableOpacity onPress={() => {
+          return Actions.room({
+            title: rowData.title,
+            description: rowData.description,
+            price: rowData.price,
+            ratingValue: rowData.ratingValue,
+            user: rowData.user,
+            loc: rowData.loc,
+            _id: rowData._id,
+            photos: rowData.photos,
+            reviews: rowData.reviews,
+        })}}>
           <Image
             source={{ uri: rowData.photos[0] }}
             style={{
@@ -113,7 +116,6 @@ class Home extends React.Component {
   }
 
   render() {
-  console.log('App#componentDidMount this.state.dataSource.getRowCount()', this.state.dataSource.getRowCount());
     if (this.state.dataSource.getRowCount() === 0) {
       return (
         <View

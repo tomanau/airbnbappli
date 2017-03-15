@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
 class Room extends React.Component {
 
   render() {
-    console.log('Room#render', this.props);
     const {
       price,
       description,
@@ -40,9 +39,8 @@ class Room extends React.Component {
       _id,
       reviews,
       photos,
-      city,
+      loc,
     } = this.props;
-
     return (
       <View style={styles.container}>
         <Image
@@ -57,11 +55,12 @@ class Room extends React.Component {
          position: 'absolute',
          right: 0,
          top: 160,
-
          zIndex: 11,
        }}
           onPress={() => Actions.profile({
-
+            username: user.account.username,
+            description: user.account.description,
+            photos: user.account.photos,
        })}>
            <Image style={{
              width: 50,
@@ -78,7 +77,7 @@ class Room extends React.Component {
         <Text>{price} €</Text>
         <View>
           <Mapp
-          city= {this.props.city}
+          loc= {this.props.loc}
           style={styles.map}/>
         </View>
       </View>

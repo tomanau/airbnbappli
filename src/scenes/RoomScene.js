@@ -8,7 +8,8 @@ import {
   Actions,
 } from 'react-native-router-flux';
 import Room from '../components/room/Room';
-import Mapp from '../components/map/Mapp'
+import Mapp from '../components/map/Mapp';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -40,21 +41,16 @@ class RoomScene extends React.Component {
     }
 
     componentDidMount() {
-      console.log('componentDidMount');
       const id = this.props._id;
-      console.log('this.props._id', this.props._id);
 
       this.getRoom(id, (room) => this.setState({room}));
     }
 
     renderRoom() {
-      console.log('renderRoom');
       const {
         room,
       } = this.props;
-      console.log("room = ", room);
-      console.log('this.props', this.props);
-      console.log('this.state', this.state);
+
 
       // if(Object.keys(room).length === 0) {
       //   return (
@@ -73,16 +69,17 @@ class RoomScene extends React.Component {
               _id= {this.props._id}
               reviews= {this.props.reviews}
               photos= {this.props.photos}
-              city= {this.props.city}/>
+              loc= {this.props.loc}/>
             <Mapp
-              city= {this.props.city}/>
+              loc= {this.props.loc}/>
           </View>
 
       );
     }
 
   render() {
-    console.log('render2', this.props);
+    // console.log('TEST 1', this.props._id);
+    // console.log('TEST 2', this.props.city.loc[0]);
     return (
       <View style={styles.container}>
         {this.renderRoom()}

@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   Button,
+  Image,
   View
 } from 'react-native';
 import {
@@ -11,14 +12,11 @@ import {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 70,
+    marginTop: 85,
+    paddingLeft: 20,
+    paddingRight: 20,
     flex : 1,
   },
-  h1: {
-    fontSize: 20,
-    color: 'white',
-    textAlign: 'center',
-  }
 });
 
 
@@ -26,12 +24,16 @@ class ProfileScene extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.h1}>
-          Page ProfileScene
-        </Text>
-        <Text>
-          Hello {this.props.name}!
-        </Text>
+        <Image style={{
+          width: 200,
+          height: 200,
+          borderRadius: 100,
+        }}
+        source={{ uri: this.props.photos[0]}}
+        />
+        <Text> {this.props.username} </Text>
+        <Text> {this.props.description} </Text>
+
       </View>
     );
   }

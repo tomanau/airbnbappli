@@ -6,12 +6,9 @@ import Map from 'react-native-maps';
 class Mapp extends React.Component {
   render() {
     const marker = {
-      latitude: this.props.city.loc[1],
-      longitude: this.props.city.loc[0],
+      latitude: this.props.loc[1],
+      longitude: this.props.loc[0],
     };
-    console.log('objetMAPP', this.props.city);
-    console.log('lattitude', this.props.city.loc[1]);
-    console.log('longitude', this.props.city.loc[0]);
     return (
 
       <Map
