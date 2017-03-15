@@ -13,6 +13,7 @@ import {
   Actions,
 } from 'react-native-router-flux';
 import RoomScene from '../../scenes/RoomScene';
+import Room from '../room/Room';
 
 const styles = StyleSheet.create({
   container: {
