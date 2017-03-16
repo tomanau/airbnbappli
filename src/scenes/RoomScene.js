@@ -13,7 +13,7 @@ import Mapp from '../components/map/Mapp';
 
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: 20,
+    paddingLeft: 10,
     paddingRight: 20,
     justifyContent: 'center',
     flex : 1,

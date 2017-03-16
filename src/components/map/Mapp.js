@@ -24,8 +24,8 @@ class Mapp extends React.Component {
             latitude: marker.latitude,
             longitude: marker.longitude,
           }}
-          title={'Le Reacteur'}
-          description={'React Native training institute'} />
+          title={'à modifier'}
+          description={'à modifier'} />
         </Map>
     );
   }

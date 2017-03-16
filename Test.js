@@ -2,7 +2,6 @@ import React from 'react';
 import HomeScene from './src/scenes/HomeScene';
 import ProfileScene from './src/scenes/ProfileScene';
 import RoomScene from './src/scenes/RoomScene';
-import LogInScene from './src/scenes/LogInScene';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
@@ -30,7 +29,6 @@ class App extends React.Component {
   render() {
     return (
       <Router navigationBarStyle={styles.navBar} titleStyle={styles.navTitle}>
-        <Scene key={'login'} title={'Connexion'} component={LogInScene} />
         <Scene key={'home'} title={'Mon Airbnb'} component={HomeScene} />
         <Scene key={'room'} title={'Chambre'} component={RoomScene} />
         <Scene key={'profile'} title={'Utilisateur'} component={ProfileScene} />

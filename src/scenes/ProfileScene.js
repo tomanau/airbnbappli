@@ -3,12 +3,11 @@ import {
   StyleSheet,
   Text,
   Button,
+  ScrollView,
   Image,
   View
 } from 'react-native';
-import {
-  Actions,
-} from 'react-native-router-flux';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
 class ProfileScene extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Image style={{
           width: 200,
           height: 200,
@@ -33,8 +32,14 @@ class ProfileScene extends React.Component {
         />
         <Text> {this.props.username} </Text>
         <Text> {this.props.description} </Text>
-
-      </View>
+        <Image style={{
+          width: 200,
+          height: 200,
+        }}
+        source={{ uri: this.props.photoAppart[0]}}
+        />
+        <Text> {this.props.titleAppart} </Text>
+      </ScrollView>
     );
   }
 }

@@ -61,6 +61,8 @@ class Room extends React.Component {
             username: user.account.username,
             description: user.account.description,
             photos: user.account.photos,
+            titleAppart : title,
+            photoAppart : photos,
        })}>
            <Image style={{
              width: 50,
